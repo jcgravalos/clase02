@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Fila 01</title>
+</head>
+
+<body>
+
+  <!-- Explanation Fila01 / Web srv -->
+  <h1>Instalación de Nginx en Linux con Configuración SSL</h1>
+  <!-- Navigation Bar -->
+  <div class="nav_bar">
+    <ul>
+      <li class="nav_bar_li"><a class="nav_bar_a" href="index.html">Home</a></li>
+      <li class="nav_bar_li"><a class="nav_bar_a" href="fila01.html">Fila01</a></li>
+      <li class="nav_bar_li"><a class="nav_bar_a" href="fila02.html">Fila02</a></li>
+      <li class="nav_bar_li"><a class="nav_bar_a" href="fila03.html">Fila03</a></li>
+      <li class="nav_bar_li"><a class="nav_bar_a" href="references.html">Referencias </a></li>
+    </ul>
+  </div>
+  <!-- Steps Fila01 -->
+  <div>
+    <p>¡Bienvenido! En esta guía, te explicaremos los pasos para instalar Nginx en un servidor Linux y configurarlo con
+      SSL para una comunicación web segura.</p>
+
+    <h2>Paso 1: Actualizar los Paquetes del Sistema</h2>
+    <p>Antes de instalar Nginx, es importante actualizar la lista de paquetes del sistema y actualizar los paquetes
+      existentes. Utiliza el gestor de paquetes correspondiente a tu distribución de Linux:</p>
+    <pre>
+    <code>
+# Para Ubuntu/Debian
+    sudo apt update
+    sudo apt upgrade
+
+# Para CentOS/RHEL
+    sudo yum update
+    sudo yum upgrade
+    </code>
+  </pre>
+
+    <h2>Paso 2: Instalar Nginx</h2>
+    <p>A continuación, deberás instalar Nginx en tu servidor. Nuevamente, utiliza el gestor de paquetes según tu
+      distribución:</p>
+    <pre>
+    <code>
+# Para Ubuntu/Debian
+    sudo apt install nginx
+
+# Para CentOS/RHEL
+    sudo yum install nginx
+    </code>
+  </pre>
+
+    <h2>Paso 3: Iniciar y Habilitar Nginx</h2>
+    <p>Una vez que Nginx esté instalado, puedes iniciarlo y habilitarlo para que se inicie en el arranque del sistema:
+    </p>
+    <pre>
+    <code>
+sudo systemctl start nginx
+sudo systemctl enable nginx
+    </code>
+  </pre>
+
+    <h2>Paso 4: Configurar Nginx para SSL</h2>
+    <p>Ahora que tienes el certificado SSL, debes configurar Nginx para usarlo. Abre el archivo de configuración de
+      Nginx:
+    </p>
+    <pre>
+    <code>sudo nano /etc/nginx/sites-available/default</code>
+  </pre>
+    <p>Encuentra el bloque "server" y realiza los siguientes cambios:</p>
+    <pre>
+    <code>
+server {
+        listen 82;
+        server_name wedsrv.ifct0509.com;
+    }
+
+server {
+        listen 443 ssl;
+        server_name webesrv.ifct0509.com;
+
+        ssl_certificate /etc/ssl/certs/websrv.crt;
+        ssl_certificate_key /etc/ssl/private/websr.key;
+
+      }
+    </code>
+  </pre>
+    <p>Guarda el archivo y sal del editor de texto.</p>
+
+    <h2>Paso 5: Probar la Configuración de Nginx</h2>
+    <p>Antes de aplicar los cambios, valida la configuración de Nginx para evitar posibles problemas:</p>
+    <pre>
+    <code>sudo nginx -t
+</code>
+  </pre>
+    <p>Si la prueba es exitosa, recarga Nginx para aplicar los cambios:</p>
+    <pre>
+    <code>sudo systemctl reload nginx</code>
+  </pre>
+
+    <h2>Paso 6: Verificar la Configuración de HTTPS</h2>
+    <p>Ahora, visita tu dominio utilizando "https://" en el navegador para verificar que Nginx está sirviendo
+      correctamente tu sitio web a través de HTTPS.</p>
+    <p>¡Felicidades! Tu servidor Nginx ahora está instalado y configurado con SSL.</p>
+
+    <pre class="link">
+    <a href="https//websrv.ifct0509.com">Tu servidor web (en este caso el nuestro)</a>
+  </pre>
+  </div>
+</body>
+
+</html>
