@@ -1,0 +1,101 @@
+/* Custom styles for the website */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #007bff;
+  text-align: center;
+  margin-top: 40px;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+p {
+  font-size: 1.2rem;
+  text-align: justify;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+ul {
+  font-size: 1.2rem;
+  text-align: justify;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.color_title {
+  color: #007bff;
+  font-size: 1.2rem;
+  text-align: justify;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+pre {
+  font-size: 1.2rem;
+  text-align: left;
+  margin: auto;
+  background-color: #f4f4f4;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+code {
+  margin: 0 20ox;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  padding: 5px 15px;
+  display: block;
+  background-color: #000814;
+  color: #f0f0f0;
+  /* Choose your desired text color for the code; */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.link {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Navigation Bar */
+.nav_bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #a2d2ff;
+  display: flex;
+  justify-content: center;
+}
+
+.nav_bar_li {
+  float: left;
+  display: flex;
+  margin-right: 20px;
+}
+
+.nav_bar_a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav_bar_a:hover {
+  background-color: #007bff;
+}
